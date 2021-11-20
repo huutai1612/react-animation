@@ -14,18 +14,39 @@
 }
 
 .ModalOpen {
-	opacity: 1;
-	transform: translateY(0);
+	animation: openModal 0.5s ease-out forwards;
 }
 
 .ModalClose {
-	opacity: 0;
-	transform: translateY(-100%);
+	animation: closeModal 0.5s ease-out forwards;
 }
 
 @keyframes openModal {
 	0% {
 		opacity: 0;
-		transform: translateY();
+		transform: translateX(-100%);
+	}
+	70% {
+		opacity: 0.75;
+		transform: translateX(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes closeModal {
+	0% {
+		opacity: 0;
+		transform: translateX(0);
+	}
+	50% {
+		opacity: 0.5;
+		transform: translateX(-80%);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-100%);
 	}
 }
