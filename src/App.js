@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Transition } from 'react-transition-group';
 import './App.css';
 import Modal from './components/Modal/Modal';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -15,10 +14,8 @@ const App = () => {
 	return (
 		<div className='App'>
 			<h1>React Animations</h1>
-			<Transition in={isShow} timeout={500} mountOnEnter unmountOnExit>
-				{(state) => <Modal show={state} closed={closeModal} />}
-			</Transition>
 
+			<Modal show={isShow} closed={closeModal} />
 			{isShow && <Backdrop show={isShow} closed={closeModal} />}
 			<button className='Button' onClick={showModal}>
 				Open Modal
